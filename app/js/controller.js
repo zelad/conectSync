@@ -5,4 +5,7 @@ app.controller('myCtrl', function($scope) {
     $scope.mdp = "";
     
     var Request = require('request');
+    var Hawk = require('hawk');
+    
+ 
 });
