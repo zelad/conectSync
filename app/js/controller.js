@@ -6,8 +6,8 @@ app.controller('myCtrl', function($scope) {
     
 //    var Request = require('request');
 //    var Hawk = require('hawk');
-    var client = new FxAccountClient("https://accounts.firefox.com/signin");
-//    var client = new FxAccountClient();
+    var client = new FxAccountClient("https://api.accounts.firefox.com/v1");
     
     var promise = client.signIn("rbeck@assystem.com", "comptePourDev");
+    console.log(promise);
 });
