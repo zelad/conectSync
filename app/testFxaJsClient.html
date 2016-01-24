@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html ng-app="myApp">
+<head>
+<meta charset="ISO-8859-1">
+	<title>Test de la lib FXA-JS-Client</title>
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular/angular-resource.js"></script><!-- Concerne les service -->
+    
+    <script src="../build/fxa-client.js"></script>
+    <!-- <script src="lib/FxAccountClient.js" ></script>
+    <script src="lib/credentials.js"></script>
+    <script src="lib/errors.js"></script>
+    <script src="lib/hawk.js"></script>
+    <script src="lib/hawkCredentials.js"></script>
+    <script src="lib/hkdf.js"></script>
+    <script src="lib/pbkdf2.js"></script>
+    <script src="lib/request.js"></script>
+    <script src="lib/require.js"></script> -->
+    
+	<script src="js/controller.js"></script>
+</head>
+<body>
+	<div ng-controller="myCtrl">
+	
+		First Name: <input type="text" ng-model="firstName"><br>
+		Last Name: <input type="text" ng-model="lastName"><br>
+		<br>
+		Full Name: {{firstName + " " + lastName}}
+	
+	</div>
+</body>
+</html>
