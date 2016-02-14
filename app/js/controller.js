@@ -1,6 +1,6 @@
 var app = angular.module('myApp', []);
 
-app.controller('myCtrl', function($scope) {
+app.controller('myCtrl', function($scope,$timeout) {
     $scope.log = "John";
     $scope.mdp = "";
     $scope.authTimeStamp=0;
@@ -14,10 +14,16 @@ app.controller('myCtrl', function($scope) {
 //    console.log(promise);
     promise.then(function(objRx){
     	console.log("recu: ",objRx);
-    	$scope.authTimeStamp=objRx.authAt;
-    	$scope.logUid=objRx.uid;
+    	$scope.showCredentials(objRx);
     }, function(reason){
     	console.log("KO");
     });
     
+    /**pour affichage suite à un event*/
+    $scope.showCredentials = function (objRx) {
+    	$timeout(function () {
+        	$scope.authTimeStamp=objRx.authAt;
+        	$scope.logUid=objRx.uid;
+    	}, 100);
+    }
 });
