@@ -10,14 +10,25 @@ app.controller('myCtrl', function($scope,$timeout) {
 //    var Hawk = require('hawk');
     var client = new FxAccountClient("https://api.accounts.firefox.com/v1");
     
-    var promise = client.signIn("rbeck@assystem.com", "comptePourDev");
+    var promise = client.signIn("rbeck@assystem.com", "comptePourDev",options={"keys":"true"/*,"reason":"signin"//ne sert pas!*/});
+    
 //    console.log(promise);
     promise.then(function(objRx){
     	console.log("recu: ",objRx);
+    	
+//    	var promiseBidAssertion = client.certificateSign(objRx.sessionToken, objRx.uid, 60000);
+//    	promiseBidAssertion.then(function(objRX){
+//        	console.log(objRx);
+//        }, function(reason){
+//        	console.error("signing KO");
+//        });
+    	
     	$scope.showCredentials(objRx);
     }, function(reason){
     	console.log("KO");
     });
+    
+
     
     /**pour affichage suite à un event*/
     $scope.showCredentials = function (objRx) {
