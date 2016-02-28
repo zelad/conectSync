@@ -37,6 +37,7 @@ app.controller('myCtrl', function($scope,$timeout) {
 //Test de génération de pair de clef en DSA 1024 library "otr"
     //https://github.com/arlolra/otr
     	//point de départ: https://groups.google.com/forum/#!topic/crypto-js/LNEPcJwlpXI
+/** TODO @ICI: nous avons une clef public mais en BigInt, il faut la convertir en Hexa */
     var myKey = new DSA();
     console.info(myKey);
     
