@@ -19,20 +19,26 @@ app.controller('myCtrl', function($scope,$timeout) {
     
 //Test de génération de pair de clef en DSA 1024 library "openpgpjs"
     //https://github.com/openpgpjs/openpgpjs#generate-new-key-pair
-    var openpgp = require('openpgp'); // use as CommonJS, AMD, ES6 module or via window.openpgp
+//    var openpgp = require('openpgp'); // use as CommonJS, AMD, ES6 module or via window.openpgp
+//
+//    openpgp.initWorker({ path:'openpgp.worker.js' }) // set the relative web worker path
+//    
+//    var options = {
+//    	    userIds: [{ name:'Jon Smith', email:'jon@example.com' }], // multiple user IDs
+//    	    numBits: 1024,                                            // RSA key size
+//    	    passphrase: 'super long and hard to guess secret'         // protects the private key
+//    	};
+//
+//    	openpgp.generateKey(options).then(function(key) {
+//    	    var privkey = key.privateKeyArmored; // '-----BEGIN PGP PRIVATE KEY BLOCK ... '
+//    	    var pubkey = key.publicKeyArmored;   // '-----BEGIN PGP PUBLIC KEY BLOCK ... '
+//    	});
 
-    openpgp.initWorker({ path:'openpgp.worker.js' }) // set the relative web worker path
-    
-    var options = {
-    	    userIds: [{ name:'Jon Smith', email:'jon@example.com' }], // multiple user IDs
-    	    numBits: 1024,                                            // RSA key size
-    	    passphrase: 'super long and hard to guess secret'         // protects the private key
-    	};
-
-    	openpgp.generateKey(options).then(function(key) {
-    	    var privkey = key.privateKeyArmored; // '-----BEGIN PGP PRIVATE KEY BLOCK ... '
-    	    var pubkey = key.publicKeyArmored;   // '-----BEGIN PGP PUBLIC KEY BLOCK ... '
-    	});
+//Test de génération de pair de clef en DSA 1024 library "otr"
+    //https://github.com/arlolra/otr
+    	//point de départ: https://groups.google.com/forum/#!topic/crypto-js/LNEPcJwlpXI
+    var myKey = new DSA();
+    console.info(myKey);
     
 //    console.info();
     
