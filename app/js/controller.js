@@ -35,11 +35,16 @@ app.controller('myCtrl', function($scope,$timeout) {
 //    	});
 
 //Test de génération de pair de clef en DSA 1024 library "otr"
+    //fonctionne mais nous n obtenons pas une pair Hex mais BigInt :(
     //https://github.com/arlolra/otr
-    	//point de départ: https://groups.google.com/forum/#!topic/crypto-js/LNEPcJwlpXI
-/** TODO @ICI: nous avons une clef public mais en BigInt, il faut la convertir en Hexa */
+    //point de départ: https://groups.google.com/forum/#!topic/crypto-js/LNEPcJwlpXI
     var myKey = new DSA();
-    console.info(myKey);
+    
+    //TODO @ICI: essayer http://kjur.github.io/jsrsasign/api/symbols/KJUR.crypto.DSA.html#.setPublic
+    	//puisque les paramètres sont des "bigInteger"
+//    console.info(myKey);
+    
+//
     
 //    console.info();
     
